@@ -1,21 +1,64 @@
 <!DOCTYPE html>
 <html lang="en">
-<head>
-    <meta charset="UTF-8">
-    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <title>library</title>
-    <link rel="stylesheet" href="./stylee.css">
+    <link rel="stylesheet" href="./stylee.css" />
     <script type="text/javascript" src="./index.js"></script>
-</head>
-<body>
-    <header class="header">
-        <div class="library-title">library</div>
-        <img class="library-icon" src="./img/book.png" >
+  </head>
+  <body>
+    <header class="header" id="header">
+      <div class="library-title">library</div>
+      <img class="library-icon" src="./img/book.png" />
     </header>
     <main class="main">
-        <div class="add-book">
-        <button class="add-btn">+ Add book</button>
-    </div>
+      <div class="add-book">
+        <button class="add-btn" id="add-btn">+ Add book</button>
+      </div>
+      <!-- popup form -->
+      <div class="popup" id="popup">
+        <div class="new-book">
+          <div class="add-book">Add new book</div>
+          <input
+            class="book-data"
+            name="textfield"
+            type="text"
+            placeholder="Title"
+          />
+          <input
+            class="book-data"
+            name="textfield"
+            type="text"
+            placeholder="Author"
+          />
+          <!-- <input class="book-data" name="textfield" type="text" placeholder="Pages" /> -->
+          <input
+            class="book-data"
+            placeholder="Pages"
+            type="number"
+            name="test_name"
+            min="0"
+            oninput="validity.valid||(value='');"
+          />
+
+          <div class="read-it">
+            <div class="read-it-txt">Have you read it?</div>
+            <input class="read-it-box" type="checkbox" />
+          </div>
+          <button class="submit-btn">submit</button>
+        </div>
+      </div>
     </main>
-</body>
+
+    <footer class="footer" id="footer">
+      <p>
+        ©
+        <script>
+          document.write(new Date().getFullYear());
+        </script>
+        All rights reserved.
+      </p>
+    </footer>
+  </body>
 </html>
