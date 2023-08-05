@@ -4,6 +4,11 @@
     padding: 0;
 }
 
+body {
+    background-color: #f0eef1;
+    font-family: 'Poppins', sans-serif;
+}
+
 .header {
     display: flex;
     align-items: center;
@@ -15,7 +20,6 @@
 .library-title {
     font-size: 40px;
     font-weight: 900;
-    font-family: 'Poppins', sans-serif;
     margin: 25px;
 }
 
@@ -24,6 +28,26 @@
     height: 80px;
 }
 
-body {
-    background-color: #f0eef1;
+.add-book {
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin: 35px;
+}
+
+.add-btn {
+    border: none;
+    width: 175px;
+    height: 55px;
+    font-size: 25px;
+    font-weight: 900;
+    border-radius:5px;
+}
+
+.add-btn:hover {
+    background-color: #cfcccc;
+}
+.add-btn:active {
+    background-color: #dcdbdc;
+
 }
