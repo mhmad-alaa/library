@@ -14,39 +14,43 @@
     </header>
     <main class="main">
       <div class="add-book">
-        <button class="add-btn" id="add-btn">+ Add book</button>
+        <button class="add-btn" id="add-btn" onclick="popupBook()">
+          + Add book
+        </button>
       </div>
       <!-- popup form -->
       <div class="popup" id="popup">
-        <div class="new-book">
-          <div class="add-book">Add new book</div>
-          <input
-            class="book-data"
-            name="textfield"
-            type="text"
-            placeholder="Title"
-          />
-          <input
-            class="book-data"
-            name="textfield"
-            type="text"
-            placeholder="Author"
-          />
-          <!-- <input class="book-data" name="textfield" type="text" placeholder="Pages" /> -->
-          <input
-            class="book-data"
-            placeholder="Pages"
-            type="number"
-            name="test_name"
-            min="0"
-            oninput="validity.valid||(value='');"
-          />
+        <div class="book">
+          <div class="close"><button class="close-btn">X</button></div>
+          <div class="new-book">
+            <div class="add-book">Add new book</div>
+            <input
+              class="book-data"
+              name="textfield"
+              type="text"
+              placeholder="Title"
+            />
+            <input
+              class="book-data"
+              name="textfield"
+              type="text"
+              placeholder="Author"
+            />
+            <input
+              class="book-data"
+              placeholder="Pages"
+              type="number"
+              name="test_name"
+              min="0"
+              oninput="validity.valid||(value='');"
+            />
 
-          <div class="read-it">
-            <div class="read-it-txt">Have you read it?</div>
-            <input class="read-it-box" type="checkbox" />
+            <div class="read-it">
+              <div class="read-it-txt">Have you read it?</div>
+              <input class="read-it-box" type="checkbox" />
+            </div>
+            <button class="submit-btn">submit</button>
           </div>
-          <button class="submit-btn">submit</button>
         </div>
       </div>
     </main>

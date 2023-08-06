@@ -1,12 +1,12 @@
-const header = document.getElementById('header');
-const open = document.getElementById('add-btn');
-const popup = document.getElementById('popup');
-const footer = document.getElementById('footer');
+// const header = document.getElementById('header');
+// const open = document.getElementById('add-btn');
+// const footer = document.getElementById('footer');
 
 
-open.addEventListener('click', () => {
-    header.classList.add('hide');
-    footer.classList.add('hide');
-    
-    popup.classList.add('show');
-});
+function popupBook() {
+    document.getElementById('popup').classList.add("popup-book"); 
+}
+
+function closePoput() {
+    document.getElementById('body').classList.remove("popup-book"); 
+}
