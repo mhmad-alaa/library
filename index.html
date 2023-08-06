@@ -21,7 +21,9 @@
       <!-- popup form -->
       <div class="popup" id="popup">
         <div class="book">
-          <div class="close"><button class="close-btn">X</button></div>
+          <div class="close">
+            <button class="close-btn" onclick="closePopup()">X</button>
+          </div>
           <div class="new-book">
             <div class="add-book">Add new book</div>
             <input
@@ -44,15 +46,24 @@
               min="0"
               oninput="validity.valid||(value='');"
             />
-
             <div class="read-it">
               <div class="read-it-txt">Have you read it?</div>
               <input class="read-it-box" type="checkbox" />
             </div>
-            <button class="submit-btn">submit</button>
+            <button class="submit-btn" onclick="submitNewBook()">submit</button>
           </div>
         </div>
       </div>
+      <div class="books-cards-div">
+      <!-- <div class="books-cards">
+        <div class="book-card-title">CSEE</div>
+        <div class="book-card-author">Hani</div>
+        <div class="book-cnt-bages">3232</div>
+        <button class="boook-is-read">Read</button>
+        <button class="book-remove">Remove</button>
+      </div> -->
+    </div>
+      
     </main>
 
     <footer class="footer" id="footer">
