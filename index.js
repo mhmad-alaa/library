@@ -4,6 +4,7 @@ const footer = document.getElementById("footer");
 const popup = document.getElementById("popup");
 
 function popupBook() {
+
   document.getElementById("popup").classList.add("popup-book");
 }
 

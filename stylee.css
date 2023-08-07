@@ -5,7 +5,10 @@
 
 body {
   background-color: #f0eef1;
+  /* background-color: aquamarine; */
   font-family: "Poppins", sans-serif;
+  display: flex;
+  flex-direction: column;
 }
 
 /* header */
@@ -47,7 +50,6 @@ body {
   background-color: #dcdbdc;
 }
 
-
 /* main - book card from */
 
 .add-book {
@@ -59,15 +61,11 @@ body {
   font-weight: 900;
 }
 
-.popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-}
-
 .book-data,
 .submit-btn,
-.close-btn {
+.close-btn,
+.book-is-read,
+.book-remove {
   padding-inline-start: 5px;
   background-color: #fffbfb;
   border: none;
@@ -142,13 +140,24 @@ body {
   background-color: #f0eef1;
   width: 300px;
   height: 375px;
+  border-radius: 10px;
 }
+
+
+
+/* .popup {
+  position: relative;
+  display: inline-block;
+  cursor: pointer;
+  background-color:rgb(162, 237, 162);
+} */
 
 .popup {
   position: absolute;
   top: 50%;
   left: 50%;
   transform: translate(-50%, -50%) scale(0.1);
+  border-radius: 10px;
   visibility: hidden;
 }
 
@@ -163,25 +172,57 @@ body {
 }
 
 
+.ddd {
+  display: flex;
+  align-content: center;
+  justify-content: center;
+}
+
 /* books on site */
 
 .books-cards {
-    display: flex;
-    flex-direction: column;
-    justify-content: center;
+  display: flex;
+  flex-direction: column;
+  justify-content: center;
+  align-items: center;
 
-    width: 300px;
-    height: 300px;
-    background-color:rgb(223, 108, 108);
+  font-size: 20px;
+  font-weight: 400;
+
+  width: 300px;
+  height: 275px;
+  background-color: #ffffff;
+  border-radius: 10px;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
+  line-height: 1.9;
 }
 
 .books-cards-div {
-    display: flex;
-    align-items: center;
-    justify-content: space-between;
-    gap: 33px;
-    margin-right: 300px;
-    margin-left: 460px;
+  display: flex;
+  align-items: center;
+  justify-content: space-between;
+  /* justify-content: center; */
+  gap: 33px;
+  margin-right: 300px;
+  margin-left: 460px;
+}
+
+.book-is-read {
+  background-color: rgb(162, 237, 162);
+  margin-top: 20px;
+  font-weight: 400;
+}
+.book-is-read:hover {
+  background-color: rgb(153, 223, 153);
+}
+
+.book-remove {
+  background-color: #eaeaea;
+  margin-top: 10px;
+  font-weight: 400;
+}
+.book-remove:hover {
+  background-color: #d2d2d2;
 }
 
 /* footer */
@@ -195,3 +236,17 @@ body {
   text-align: center;
   margin-bottom: 10px;
 }
+
+/* .footer { 
+  position: fixed;
+  bottom: 0;
+  left: 0;
+  display: flex;
+  align-items: center;
+  justify-content: center;
+  gap: 10px;
+  width: 100%;
+  margin-bottom: 10px;
+  font-size: 20px;
+   padding: 10px;
+} */
