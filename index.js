@@ -1,17 +1,18 @@
-const header = document.getElementById("header");
-const open = document.getElementById("add-btn");
-const footer = document.getElementById("footer");
-const popup = document.getElementById("popup");
+
 
 function popupBook() {
-
-  document.getElementById("popup").classList.add("popup-book");
+  document.getElementById("overlay").classList.add("active"); 
+  document.getElementById("popup").classList.add("active");
 }
 
 function closePopup() {
-  document.getElementById("popup").classList.remove("popup-book");
+  document.getElementById("popup").classList.remove("active");
+  document.getElementById("overlay").classList.remove("active"); 
+
 }
 
 function submitNewBook() {
-  document.getElementById("popup").classList.remove("popup-book");
+  document.getElementById("popup").classList.remove("active");
+  document.getElementById("overlay").classList.remove("active"); 
+
 }

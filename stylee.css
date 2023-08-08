@@ -4,11 +4,10 @@
 }
 
 body {
-  background-color: #f0eef1;
-  /* background-color: aquamarine; */
-  font-family: "Poppins", sans-serif;
   display: flex;
   flex-direction: column;
+  background-color: #f0eef1;
+  font-family: "Poppins", sans-serif;
 }
 
 /* header */
@@ -17,7 +16,6 @@ body {
   display: flex;
   align-items: center;
   justify-content: space-around;
-
   background-color: #fffbfb;
 }
 
@@ -34,13 +32,13 @@ body {
 /* main */
 
 .add-btn {
-  border: none;
+  margin: 35px;
   width: 175px;
   height: 55px;
+  border: none;
   font-size: 25px;
   font-weight: 900;
   border-radius: 5px;
-  margin: 35px;
 }
 
 .add-btn:hover {
@@ -50,7 +48,7 @@ body {
   background-color: #dcdbdc;
 }
 
-/* main - book card from */
+/* popup book card from */
 
 .add-book {
   display: flex;
@@ -64,28 +62,28 @@ body {
 .book-data,
 .submit-btn,
 .close-btn,
-.book-is-read,
+.book-read,
 .book-remove {
   padding-inline-start: 5px;
   background-color: #fffbfb;
-  border: none;
   margin: 5px;
+  font-size: 18px;
   width: 250px;
   height: 40px;
   border-radius: 8px;
+  border: none;
   outline: none;
-  font-size: 18px;
 }
 
 .close-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   padding-inline-start: 0px;
   width: 30px;
   height: 30px;
   background-color: rgb(233, 169, 169);
   border-radius: 50%;
-  display: flex;
-  align-items: center;
-  justify-content: center;
 }
 .close-btn:hover {
   background-color: rgb(223, 108, 108);
@@ -139,18 +137,9 @@ body {
 .book {
   background-color: #f0eef1;
   width: 300px;
-  height: 375px;
+  height: 350px;
   border-radius: 10px;
 }
-
-
-
-/* .popup {
-  position: relative;
-  display: inline-block;
-  cursor: pointer;
-  background-color:rgb(162, 237, 162);
-} */
 
 .popup {
   position: absolute;
@@ -161,22 +150,29 @@ body {
   visibility: hidden;
 }
 
-.popup-book {
+.popup.active {
   visibility: visible;
   background-color: #f0eef1;
   transform: translate(-50%, -50%) scale(1);
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
   line-height: 1.2;
-
   transition: 0.2s ease-in-out;
 }
 
-
-.ddd {
-  display: flex;
-  align-content: center;
-  justify-content: center;
+.overlay {
+  position: fixed;
+  top: 0;
+  left: 0;
+  display: none;
+  width: 100%;
+  height: 100%;
+  background-color: rgba(0, 0, 0, 0.5);
 }
+
+.overlay.active {
+  display: block;
+}
+
 
 /* books on site */
 
@@ -207,12 +203,12 @@ body {
   margin-left: 460px;
 }
 
-.book-is-read {
+.book-read {
   background-color: rgb(162, 237, 162);
   margin-top: 20px;
   font-weight: 400;
 }
-.book-is-read:hover {
+.book-read:hover {
   background-color: rgb(153, 223, 153);
 }
 
@@ -224,6 +220,26 @@ body {
 .book-remove:hover {
   background-color: #d2d2d2;
 }
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
+
 
 /* footer */
 

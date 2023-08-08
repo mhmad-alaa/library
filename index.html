@@ -7,18 +7,27 @@
     <link rel="stylesheet" href="./stylee.css" />
     <script type="text/javascript" src="./index.js"></script>
   </head>
+
   <body>
+
     <header class="header" id="header">
       <div class="library-title">library</div>
       <img class="library-icon" src="./img/book.png" />
     </header>
+
     <main class="main">
+
+      <!-- add book button -->
       <div class="add-book">
         <button class="add-btn" id="add-btn" onclick="popupBook()">
           + Add book
         </button>
       </div>
-      <!-- popup form -->
+
+      <!-- overlay under the popup form -->
+      <div class="overlay" id="overlay"></div>
+
+      <!-- popup add book form -->
       <div class="popup" id="popup">
         <div class="book">
           <div class="close">
@@ -31,12 +40,14 @@
               name="textfield"
               type="text"
               placeholder="Title"
+              required
             />
             <input
               class="book-data"
               name="textfield"
               type="text"
               placeholder="Author"
+              required
             />
             <input
               class="book-data"
@@ -45,6 +56,7 @@
               name="test_name"
               min="0"
               oninput="validity.valid||(value='');"
+              required
             />
             <div class="read-it">
               <div class="read-it-txt">Have you read it?</div>
@@ -54,19 +66,20 @@
           </div>
         </div>
       </div>
+
+      <!-- books cards-->
       <div class="books-cards-div">
         <div class="books-cards">
           <div class="book-card-title">"CSEE"</div>
           <div class="book-card-author">Nagiub</div>
           <div class="book-cnt-bages">3232 Pages</div>
-          <button class="book-is-read">Read</button>
+          <button class="book-read">Read</button>
           <button class="book-remove">Remove</button>
         </div>
       </div>
-    
-      </div>
     </main>
 
+    <!-- footer -->
     <footer class="footer" id="footer">
       <p>
         ©
