@@ -5,10 +5,8 @@ window.addEventListener("DOMContentLoaded", function() {
 
   submit.addEventListener("click", function() {
     newBookCard();
-    // formValues();
   });
 });
-
 
 
 function resetForm() {
@@ -42,6 +40,11 @@ function closePopup() {
   document.getElementById("overlay").classList.remove("active");
 }
 
+function checkReadBtn(isRead, readBtn) {
+  readBtn.textContent = (!Book.readIt? "Read" : "Not read");
+  readBtn.style.backgroundColor = (!Book.readIt? '#9fff9c' : '#ff9c9c');
+}
+
 function newBookCard() {
   let Book = formValues();
   if (!Book.title || !Book.author || !Book.pages) {
@@ -59,8 +62,13 @@ function newBookCard() {
     title.textContent = `"${Book.title}"`;
     author.textContent = Book.author;
     pages.textContent = `${Book.pages} pages`;
-    readBtn.textContent = (Book.readIt? "Read" : "Not read")
+    readBtn.textContent = (Book.readIt? "Read" : "Not read");
+    readBtn.style.backgroundColor = (Book.readIt? '#9fff9c' : '#ff9c9c');
     removeBtn.textContent = "Remove";
+    
+    // to do => do read-status and remove buttons onclick
+    // readBtn.onclick = checkReadBtn(Book.readIt, readBtn);
+
 
     bookCardContainer.classList.add('book-cards-container');
     bookCard.classList.add('books-cards');
@@ -68,7 +76,6 @@ function newBookCard() {
     author.classList.add('book-card-author');
     pages.classList.add('book-cnt-pages');
     readBtn.classList.add('book-read');
-
     removeBtn.classList.add('book-remove');
 
     bookCard.appendChild(title);
@@ -78,9 +85,7 @@ function newBookCard() {
     bookCard.appendChild(removeBtn);
     bookCardContainer.appendChild(bookCard);
     
-    // document.querySelector('body').appendChild(bookCard); 
     document.querySelector('body').appendChild(bookCardContainer); 
-
 
     console.log(bookCardContainer); 
 

@@ -22,7 +22,7 @@ html {
   align-items: center;
   justify-content: space-around;
   background-color: #fffbfb;
-  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;;
+  box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
 
 .library-title {
@@ -92,6 +92,8 @@ html {
   border-radius: 50%;
 }
 .close-btn:hover {
+  background-color: rgb(212, 126, 126);
+
   background-color: rgb(223, 108, 108);
 }
 .close-btn:active {
@@ -179,9 +181,6 @@ html {
   display: block;
 }
 
-
-
-
 /* books on site */
 
 .main {
@@ -190,17 +189,26 @@ html {
 }
 
 .book-cards-container {
+  /* display: grid;
+   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+   grid-gap: 40px; */
+
   display: grid;
-  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 40px;
-  margin-top: 40px;
+  grid-template-columns: repeat(auto-fill, 3);
+  grid-gap: 40px;
+
+  display: flex;
+  align-items: center;
+  justify-content: center;
+
+  padding-bottom: 40px;
 }
 
 .books-cards {
   display: flex;
   flex-direction: column;
   align-items: center;
-  justify-content: center; 
+  justify-content: center;
 
   font-size: 20px;
   font-weight: 400;
@@ -231,17 +239,13 @@ html {
   background-color: #d2d2d2;
 }
 
-
-
-
-
 /* footer */
 
-.footer { 
+.footer {
   display: flex;
   align-items: center;
   justify-content: center;
-  position:absolute;
+  position: absolute;
   bottom: 0;
   left: 0;
   gap: 10px;
