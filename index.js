@@ -1,3 +1,16 @@
+
+
+window.addEventListener("DOMContentLoaded", function() {
+  const submit = document.querySelector("#submit");
+
+  submit.addEventListener("click", function() {
+    newBookCard();
+    // formValues();
+  });
+});
+
+
+
 function resetForm() {
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
@@ -5,11 +18,15 @@ function resetForm() {
   document.getElementById("read-it-box").checked = false;
 }
 
+
 function formValues() {
-  let title = document.getElementById("title").value;
-  let author = document.getElementById("author").value;
-  let pages = document.getElementById("pages").value;
-  let readIt = document.getElementById("read-it-box").checked;
+  const title = document.querySelector("#title").value;
+  const author = document.getElementById("author").value;
+  const pages = document.getElementById("pages").value;
+  const readIt = document.getElementById("read-it-box").checked;
+
+  console.log(title, author, pages, readIt);
+  closePopup(); 
 
   return { title, author, pages, readIt };
 }
@@ -25,8 +42,7 @@ function closePopup() {
   document.getElementById("overlay").classList.remove("active");
 }
 
-const submit = document.getElementById("submit");
-submit.addEventListener('click', () => {
+function newBookCard() {
   let Book = formValues();
   if (!Book.title || !Book.author || !Book.pages) {
     alert("Un completed data!");
@@ -40,45 +56,30 @@ submit.addEventListener('click', () => {
     const removeBtn = document.createElement('button');
 
 
-    title.textContent = Book.title;
+    title.textContent = `"${Book.title}"`;
     author.textContent = Book.author;
-    pages.textContent = Book.pages;
-    readBtn.textContent = "Read"
+    pages.textContent = `${Book.pages} pages`;
+    readBtn.textContent = (Book.readIt? "Read" : "Not read")
     removeBtn.textContent = "Remove";
 
-    // bookCardContainer.classList.add('book-cards-div');
-    // bookCard.classList.add('books-cards');
-    // title.classList.add('book-card-title');
-    // author.classList.add('book-card-author');
-    // pages.classList.add('book-cnt-pages');
-    // readBtn.classList.add('book-read');
-    // removeBtn.classList.add('book-remove');
+    bookCardContainer.classList.add('book-cards-container');
+    bookCard.classList.add('books-cards');
+    title.classList.add('book-card-title');
+    author.classList.add('book-card-author');
+    pages.classList.add('book-cnt-pages');
+    readBtn.classList.add('book-read');
 
-    bookCardContainer.setAttribute('class', 'book-cards-div');
-    bookCard.setAttribute('class', 'books-cards');
-    title.setAttribute('class', 'book-card-title');
-    author.setAttribute('class', 'book-card-author');
-    pages.setAttribute('class', 'book-cnt-pages');
-    readBtn.setAttribute('class', 'book-read');
-    removeBtn.setAttribute('class', 'book-remove');
+    removeBtn.classList.add('book-remove');
 
-    bookCardContainer.appendChild(bookCard);
     bookCard.appendChild(title);
     bookCard.appendChild(author);
     bookCard.appendChild(pages);
     bookCard.appendChild(readBtn);
     bookCard.appendChild(removeBtn);
-
-
+    bookCardContainer.appendChild(bookCard);
     
-
-    // title.innerHTML = `"${Book.title}"`;
-    // author.innerHTML = `${Book.author}`;
-    // pages.innerHTML = `${Book.pages} Pages`;
-    // readBtn.innerHTML = (Book.readIt ? `Read` : `Not Read`);
-    // removeBtn.innerHTML = `Remove`;
-
-
+    // document.querySelector('body').appendChild(bookCard); 
+    document.querySelector('body').appendChild(bookCardContainer); 
 
 
     console.log(bookCardContainer); 
@@ -86,12 +87,5 @@ submit.addEventListener('click', () => {
     document.getElementById("popup").classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
   }
-}); 
-
-// const createBookCard = () => {
-  
-// }
-
-// const accountBtn = document.getElementById('accountBtn')
-// accountBtn.onclick = openAccountModal
+}
 
