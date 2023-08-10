@@ -38,9 +38,12 @@ html {
 /* main */
 
 .add-btn {
+  display: flex;
+  align-items: center;
+  justify-content: center;
   margin: 20px;
-  width: 175px;
-  height: 55px;
+  padding: 10px 10px;
+
   border: none;
   font-size: 25px;
   font-weight: 900;
@@ -185,23 +188,16 @@ html {
 
 .main {
   margin-top: 20px;
+  margin-left: 275px;
+  margin-right: 275px;
   text-align: center;
 }
 
 .book-cards-container {
-  /* display: grid;
-   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-   grid-gap: 40px; */
-
   display: grid;
-  grid-template-columns: repeat(auto-fill, 3);
-  grid-gap: 40px;
-
-  display: flex;
-  align-items: center;
-  justify-content: center;
-
-  padding-bottom: 40px;
+  grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
+  gap: 20px;
+  margin-top: 20px;
 }
 
 .books-cards {
