@@ -4,6 +4,7 @@
 }
 
 body {
+  float: none;
   background-color: #f0eef1;
   font-family: "Poppins", sans-serif;
   margin-bottom: 100px;
@@ -21,6 +22,9 @@ html {
   display: flex;
   align-items: center;
   justify-content: space-around;
+}
+
+.header {
   background-color: #fffbfb;
   box-shadow: rgba(0, 0, 0, 0.16) 0px 1px 4px;
 }
@@ -37,10 +41,24 @@ html {
 
 /* main */
 
-.add-btn {
+.container {
+  max-width: 1200px;
+  padding-left: 40px;
+  padding-right: 40px;
+  margin: 0 auto; /* check that? */
+}
+
+.add-book {
   display: flex;
   align-items: center;
   justify-content: center;
+}
+
+.add-btn {
+  display: flex;
+  align-items: center;
+  justify-items: center;
+
   margin: 20px;
   padding: 10px 10px;
 
@@ -59,10 +77,11 @@ html {
 
 /* popup book card from */
 
-.add-book {
+.add-new-book {
   display: flex;
   align-items: center;
   justify-content: center;
+
   margin-bottom: 15px;
   font-size: 25px;
   font-weight: 900;
@@ -188,8 +207,6 @@ html {
 
 .main {
   margin-top: 20px;
-  margin-left: 275px;
-  margin-right: 275px;
   text-align: center;
 }
 
