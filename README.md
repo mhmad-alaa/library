@@ -16,4 +16,4 @@
 - You can access a live preview [here :link:](https://mhmad-alaa.github.io/library/)
   
 
-:note: I has been inspired the UI from this [website: link:](https://michalosman.github.io/library/)
+:round_pushpin: I has been inspired the UI from this [website :link:](https://michalosman.github.io/library/)
