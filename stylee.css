@@ -44,7 +44,7 @@ html {
   max-width: 1000px;
   padding-left: 40px;
   padding-right: 40px;
-  margin: 0 auto; /* check that? */
+  margin: 0 auto; 
 }
 
 .add-book {

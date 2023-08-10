@@ -6,6 +6,8 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 });
 
+let libraryBooks = []; 
+
 function resetBookForm() {
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
@@ -19,7 +21,6 @@ function getBookValues() {
   const pages = document.getElementById("pages").value;
   const readIt = document.getElementById("read-it-box").checked;
 
-  // console.log(title, author, pages, readIt);
   closeBookForm();
 
   return { title, author, pages, readIt };
@@ -36,16 +37,32 @@ function closeBookForm() {
   document.getElementById("overlay").classList.remove("active");
 }
 
-// not worked yet
-function checkReadBtn(isRead, readBtn) {
-  readBtn.textContent = !Book.readIt ? "Read" : "Not read";
-  readBtn.style.backgroundColor = !Book.readIt ? "#9fff9c" : "#ff9c9c";
+function newBookCard() {
+  let book = getBookValues();
+  libraryBooks.push(book); 
+  
+  drawBookCards(libraryBooks); 
 }
 
-function newBookCard() {
-  let Book = getBookValues();
-  if (!Book.title || !Book.author || !Book.pages) {
-    alert("Un completed data!");
+function drawBookCards() {
+  document.getElementById("booksGrid").innerHTML = ''; 
+  for (let i = 0; i < libraryBooks.length; ++i) {
+    createBookCard(libraryBooks[i], i); 
+  }
+}
+
+function checkRead(index) {
+  libraryBooks[index].readIt = !libraryBooks[index].readIt; 
+}
+
+function removeBook(index) {
+  libraryBooks.splice(index, 1); 
+  drawBookCards(); 
+}
+
+function createBookCard(book, index) { 
+  if (!book.title || !book.author || !book.pages) {
+    alert("Un completed data!")
   } else {
     const bookCard = document.createElement("div");
     const title = document.createElement("div");
@@ -54,15 +71,23 @@ function newBookCard() {
     const readBtn = document.createElement("button");
     const removeBtn = document.createElement("button");
 
-    title.textContent = `"${Book.title}"`;
-    author.textContent = Book.author;
-    pages.textContent = `${Book.pages} pages`;
-    readBtn.textContent = Book.readIt ? "Read" : "Not read";
-    readBtn.style.backgroundColor = Book.readIt ? "#9fff9c" : "#ff9c9c";
+    title.textContent = `"${book.title}"`;
+    author.textContent = book.author;
+    pages.textContent = `${book.pages} pages`;
+    readBtn.textContent = book.readIt ? "Read" : "Not read";
+    readBtn.style.backgroundColor = book.readIt ? "#9fff9c" : "#ff9c9c";
     removeBtn.textContent = "Remove";
 
-    // to do => do read-status and remove buttons onclick
-    // readBtn.onclick = checkReadBtn(Book.readIt, readBtn);
+
+    readBtn.addEventListener('click', () => {
+      checkRead(index); 
+      readBtn.textContent = book.readIt ? "Read" : "Not read";
+      readBtn.style.backgroundColor = book.readIt ? "#9fff9c" : "#ff9c9c";
+    }); 
+    removeBtn.addEventListener('click', () => {
+      removeBook(index); 
+    }); 
+
 
     bookCard.classList.add("books-cards");
     title.classList.add("book-card-title");
@@ -78,8 +103,6 @@ function newBookCard() {
     bookCard.appendChild(removeBtn);
 
     document.getElementById("booksGrid").appendChild(bookCard);
-
-    // console.log(bookCard);
 
     document.getElementById("popup").classList.remove("active");
     document.getElementById("overlay").classList.remove("active");
