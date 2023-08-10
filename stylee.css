@@ -211,9 +211,9 @@ html {
 
 .book-cards-container {
   display: grid;
+  place-items: center;
+  grid-gap: 30px;
   grid-template-columns: repeat(auto-fill, minmax(300px, 1fr));
-  gap: 20px;
-  margin-top: 20px;
 }
 
 .books-cards {

@@ -6,43 +6,44 @@ window.addEventListener("DOMContentLoaded", function () {
   });
 });
 
-function resetForm() {
+function resetBookForm() {
   document.getElementById("title").value = "";
   document.getElementById("author").value = "";
   document.getElementById("pages").value = "";
   document.getElementById("read-it-box").checked = false;
 }
 
-function formValues() {
+function getBookValues() {
   const title = document.querySelector("#title").value;
   const author = document.getElementById("author").value;
   const pages = document.getElementById("pages").value;
   const readIt = document.getElementById("read-it-box").checked;
 
-  console.log(title, author, pages, readIt);
-  closePopup();
+  // console.log(title, author, pages, readIt);
+  closeBookForm();
 
   return { title, author, pages, readIt };
 }
 
-function popupBook() {
-  resetForm();
+function openBookForm() { 
+  resetBookForm();
   document.getElementById("overlay").classList.add("active");
   document.getElementById("popup").classList.add("active");
 }
 
-function closePopup() {
+function closeBookForm() {
   document.getElementById("popup").classList.remove("active");
   document.getElementById("overlay").classList.remove("active");
 }
 
+// not worked yet
 function checkReadBtn(isRead, readBtn) {
   readBtn.textContent = !Book.readIt ? "Read" : "Not read";
   readBtn.style.backgroundColor = !Book.readIt ? "#9fff9c" : "#ff9c9c";
 }
 
 function newBookCard() {
-  let Book = formValues();
+  let Book = getBookValues();
   if (!Book.title || !Book.author || !Book.pages) {
     alert("Un completed data!");
   } else {
