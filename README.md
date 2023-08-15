@@ -14,9 +14,9 @@
   - Change book status (readed or not)
 <br /><br />
 
-[library.mp4](https://github-production-user-asset-6210df.s3.amazonaws.com/68995755/259885950-fe7521c5-323e-4fc9-bb9f-fe5d53458c99.mp4)
+- Video example for usage [**`here`** :tv:](https://github-production-user-asset-6210df.s3.amazonaws.com/68995755/259885950-fe7521c5-323e-4fc9-bb9f-fe5d53458c99.mp4)
 
 - You can access a live preview [**`here`** :link:](https://mhmad-alaa.github.io/library/)
 
 <br /><br />
-:round_pushpin: I has been inspired the UI from this [**`website`** :link:](https://michalosman.github.io/library/) 
+:copyright: I has been inspired the UI from this [**`website`** :link:](https://michalosman.github.io/library/) 
